@@ -11,7 +11,7 @@ import './SearchInput.less';
 
 const cnSearchInput = block('search-input');
 
-export const SearchInput = ({ className, placeholder, fixedValue, switchSuggestions, onSearch }: ISearchInputProps) => {
+export const SearchInput = ({ className, placeholder, fixedValue, onSearch }: ISearchInputProps) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const { isMobile } = useViewport();
 
@@ -21,12 +21,6 @@ export const SearchInput = ({ className, placeholder, fixedValue, switchSuggesti
     const newValue = inputRef.current?.value;
 
     setValue(newValue || '');
-  };
-
-  const handleFocus = () => {
-    if (value && switchSuggestions) {
-      switchSuggestions(true);
-    }
   };
 
   const clearInput = () => {
@@ -39,23 +33,9 @@ export const SearchInput = ({ className, placeholder, fixedValue, switchSuggesti
     if (onSearch) {
       onSearch(value);
     }
-
-    if (switchSuggestions) {
-      switchSuggestions(false);
-    }
-  };
-
-  const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = (evt) => {
-    if (evt.key === KeyboardKey.arrowUp || evt.key === KeyboardKey.arrowDown) {
-      evt.preventDefault();
-    }
   };
 
   const handleKeyUp: KeyboardEventHandler<HTMLInputElement> = (evt) => {
-    if (evt.key === KeyboardKey.arrowUp || evt.key === KeyboardKey.arrowDown) {
-      evt.preventDefault();
-    }
-
     if (evt.key === KeyboardKey.enter) {
       handleSearch();
     }
@@ -74,10 +54,8 @@ export const SearchInput = ({ className, placeholder, fixedValue, switchSuggesti
           value={value}
           type="text"
           placeholder={placeholder}
-          onKeyDown={handleKeyDown}
           onKeyUp={handleKeyUp}
           onChange={handleChange}
-          onFocus={handleFocus}
         />
         <button
           className={cnSearchInput('clear', { visible: !!value })}
