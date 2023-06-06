@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://gitname.github.io/alyonausoeva.github.io",
+  "homepage": "https://alyonausoeva.github.io/alyonausoeva.github.io",
   "scripts": {
     "start": "vite --open",
     "build": "tsc && vite build",
