@@ -1,0 +1,54 @@
+.repository-card {
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+
+.repository-card__header {
+  display: flex;
+  align-content: flex-start;
+}
+
+.repository-card__img {
+  width: 200px;
+  margin-right: 20px;
+}
+
+.repository-card__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.repository-card__title {
+  font: @font-heading-26;
+}
+
+.repository-card__stargazer-count {
+  font: @font-text-14;
+  color: @color-gray-60;
+  margin-top: 7px;
+}
+
+.repository-card__description {
+  display: flex;
+  flex-direction: column;
+}
+
+.repository-card__button {
+  width: 120px;
+  margin: 10px 0 20px;
+}
+
+.repository-card__description h4 {
+  font: @font-heading-18;
+  margin: 7px 0;
+}
+
+@media @mobile {
+  .repository-card__header {
+    flex-direction: column;
+  }
+  .repository-card__description {
+    margin-top: 7px;
+  }
+}

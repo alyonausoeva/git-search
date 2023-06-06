@@ -1,0 +1,23 @@
+.link {
+  color: @color-blue-60;
+  cursor: pointer;
+}
+
+.link:hover {
+    color: @color-blue-80;
+    text-decoration: underline;
+}
+
+.page {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: @white;
+}
+
+@media @mobile {
+  .page {
+    padding: 15px;
+  }
+}

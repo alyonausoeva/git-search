@@ -1,0 +1,71 @@
+{
+    "extends": [
+        "airbnb",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "react-hooks"
+    ],
+    "rules": {
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": ["error"],
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "@typescript-eslint/no-var-requires": 0,
+        "no-restricted-globals": "warn",
+        "no-case-declarations": "off",
+        "no-tabs": 0,
+        "camelcase": 0,
+        "eqeqeq": 0,
+        "comma-dangle": 0,
+        "linebreak-style": 0,
+        "consistent-return": 0,
+        "class-methods-use-this": 0,
+        "object-curly-newline": 0,
+        "id-length": [1, { "min": 1 }],
+        "arrow-parens": "off",
+        "max-len": [2, 200, 2, {
+            "ignoreUrls": true,
+            "ignoreComments": false
+        }],
+        "react/jsx-props-no-spreading": 0,
+        "react/require-default-props": 0,
+        "react/forbid-prop-types": [2, { "forbid": ["any"] }],
+        "react/prop-types": 0,
+        "no-use-before-define": "off",
+        "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "import/no-extraneous-dependencies": 0,
+        "import/prefer-default-export": 0,
+        "import/default": "off",
+        "import/no-useless-path-segments": ["error", { "noUselessIndex": true }],
+        "import/no-duplicates": 2,
+        "import/no-cycle": "off",
+        "import/no-named-as-default-member": "off",
+        "import/no-dublicates": "off",
+        "import/no-self-import": "off",
+        "import/extensions": "off",
+        "import/no-named-as-default": "off",
+        "import/no-unresolved": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "alias": {
+                "map": [
+                    ["application", "./src/application"],
+                    ["common", "./src/common"],
+                    ["pages", "./src/pages"]
+                ],
+                "extensions": [".jsx", ".js", ".ts", ".tsx"]
+            }
+        }
+    }
+}
